@@ -1681,15 +1681,15 @@ After this lab, you master:
 
 You have completed the IBM Bob Premium Package for Z lab. In a few hours, you have:
 
-+✅ Initialized and analyzed a complex mainframe workspace
-+✅ Generated an exhaustive application inventory
-+✅ Created a professional architecture diagram
-+✅ Documented the BANKDATA batch program
-+✅ Analyzed 210 occurrences of business rules
-+✅ Evaluated the impact of a major change
-+✅ Documented a complete user journey
-+✅ Proposed an evolution with implementation guide
-+✅ Created a Bobshell to automate documentation of 28 programs
++ ✅ Initialized and analyzed a complex mainframe workspace
++ ✅ Generated an exhaustive application inventory
++ ✅ Created a professional architecture diagram
++ ✅ Documented the BANKDATA batch program
++ ✅ Analyzed 210 occurrences of business rules
++ ✅ Evaluated the impact of a major change
++ ✅ Documented a complete user journey
++ ✅ Proposed an evolution with implementation guide
+
 
 ### 🔧 Mode Usage Summary
 
