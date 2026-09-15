@@ -16,6 +16,8 @@
 
 ## Exercice 1 : Génération d'un Coding Standard Skill Personnalisé
 
+<b>si cela n'a pas déjà était fait dans le premier lab...</b>
+
 ### 🎯 Objectif
 
 Créer un skill de coding standard personnalisé qui analyse votre code COBOL existant et génère automatiquement des standards documentés réutilisables pour garantir la cohérence du code dans toute l'équipe.
