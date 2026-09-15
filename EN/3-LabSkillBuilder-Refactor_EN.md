@@ -14,7 +14,9 @@
 
 ---
 
-## Exercise 1: Generating a Custom Coding Standard Skill
+## Exercise 1: Generating a Custom Coding Standard Skill 
+
+<b>if not done during the first lab...</b>
 
 ### 🎯 Objective
 
@@ -184,12 +186,12 @@ Bob creates the file `extractionGoal.md` (485 lines) containing:
 
 ---
 
-### **Step 1: Analyze the Existing VSAM Program**
+### **Step 1: Analyze an existing VSAM Program**
 
 #### 💬 Bob Prompt
 
 ```
-Analyze the BNKCUST program that uses VSAM files and identify:
+Analyze the INQCUST program that uses VSAM files and identify:
 - The VSAM operations used (READ, WRITE, REWRITE, DELETE, STARTBR, READNEXT)
 - The data structures being manipulated
 - The access keys and indexes
@@ -252,12 +254,12 @@ Bob generates:
 #### 💬 Bob Prompt (Mode 🧰 Z Code)
 
 ```
-/refactor BNKCUST.cbl extractionGoal.md
+/refactor INQCUST.cbl extractionGoal.md
 ```
 
 **Explanation**:
 - `/refactor`: Interactive refactoring skill command
-- `BNKCUST.cbl`: Source file to refactor
+- `INQCUST.cbl`: Source file to refactor
 - `extractionGoal.md`: Document containing the principles
 
 #### ⚙️ What Bob Does
@@ -388,11 +390,11 @@ Also includes:
 ```
 1. Create a document extractionGoal.md that defines the refactoring principles [...]
 
-2. Analyze the BNKCUST program that uses VSAM files and identify: [...]
+2. Analyze the INQCUST program that uses VSAM files and identify: [...]
 
 3. Propose a DB2 data model to replace the CUSTOMER VSAM file [...]
 
-4. /refactor BNKCUST.cbl extractionGoal.md
+4. /refactor INQCUST.cbl extractionGoal.md
 
 5. Create a complete migration plan to move from VSAM to DB2 [...]
 ```

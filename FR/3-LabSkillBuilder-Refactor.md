@@ -184,12 +184,12 @@ Bob crée le fichier `extractionGoal.md` (485 lignes) contenant :
 
 ---
 
-### **Étape 1 : Analyse du Programme VSAM Existant**
+### **Étape 1 : Analyse d'un programme VSAM Existant**
 
 #### 💬 Prompt Bob
 
 ```
-Analyse le programme BNKCUST qui utilise des fichiers VSAM et identifie :
+Analyse le programme INQCUST qui utilise des fichiers VSAM et identifie :
 - Les opérations VSAM utilisées (READ, WRITE, REWRITE, DELETE, STARTBR, READNEXT)
 - Les structures de données manipulées
 - Les clés d'accès et index
@@ -252,12 +252,12 @@ Bob génère :
 #### 💬 Prompt Bob (Mode 🧰 Z Code)
 
 ```
-/refactor BNKCUST.cbl extractionGoal.md
+/refactor INQCUST.cbl extractionGoal.md
 ```
 
 **Explication** :
 - `/refactor` : Commande du skill de refactorisation interactive
-- `BNKCUST.cbl` : Fichier source à refactoriser
+- `INQCUST.cbl` : Fichier source à refactoriser
 - `extractionGoal.md` : Document contenant les principes
 
 #### ⚙️ Ce que Bob fait
@@ -388,11 +388,11 @@ Inclut également :
 ```
 1. Crée un document extractionGoal.md qui définit les principes de refactorisation [...]
 
-2. Analyse le programme BNKCUST qui utilise des fichiers VSAM et identifie : [...]
+2. Analyse le programme INQCUST qui utilise des fichiers VSAM et identifie : [...]
 
 3. Propose un modèle de données DB2 pour remplacer le fichier VSAM CUSTOMER [...]
 
-4. /refactor BNKCUST.cbl extractionGoal.md
+4. /refactor INQCUST.cbl extractionGoal.md
 
 5. Crée un plan de migration complet pour passer de VSAM à DB2 [...]
 ```
