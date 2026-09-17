@@ -723,21 +723,21 @@ Vérifie la conformité aux standards et propose des amméliorations pour le cod
 ## Exercice 3 : Création du Diagramme d'Architecture
 [↩️](#-table-des-matières)
 
-### 🎯 Objectif
+### Étape 1 — 🎯 Objectif
 
 Créer un diagramme d'architecture visuel au format Draw.io montrant les couches applicatives et les flux de données.
 
-### 🔧 Mode Bob à Utiliser
+#### 🔧 Mode Bob à Utiliser
 
 **Mode : 📐 Z Architect**
 
 Le mode Z Architect est spécialisé dans la création de diagrammes d'architecture et l'analyse des flux applicatifs.
 
-### 📝 Contexte
+#### 📝 Contexte
 
 L'inventaire textuel est utile, mais une représentation visuelle est essentielle pour communiquer l'architecture.
 
-### ✍️ Votre Prompt
+#### ✍️ Votre Prompt
 
 Rédigez votre propre prompt pour demander un diagramme d'architecture visuel de l'application.
 
@@ -747,14 +747,14 @@ Rédigez votre propre prompt pour demander un diagramme d'architecture visuel de
 - demander les flux et dépendances clés
 - demander l'intégration des ressources externes et des données
 
-### ✅ Prompt Recommandé
+#### ✅ Prompt Recommandé
 
 ```text
 Construit un schéma d'architecture (en draw.io) illustrant les dépendances des programmes de l'application CBSA.
 ```
 Si Bob vous demande l'autorisation de se connecter à zUnderstand, déclinez et il utilisera la base de donnée locale.
 
-### 🔀 Variantes de Prompt
+#### 🔀 Variantes de Prompt
 
 ```text
 Produis un diagramme Draw.io de l'architecture CBSA avec les couches fonctionnelles, les composants et les flux de données.
@@ -764,7 +764,7 @@ Produis un diagramme Draw.io de l'architecture CBSA avec les couches fonctionnel
 Documente visuellement l'architecture de CBSA dans un fichier Draw.io en représentant programmes, bases de données et dépendances majeures.
 ```
 
-### ✅ Exemple de résultat
+#### ✅ Exemple de résultat
 
 **Fichier créé : `graph/CBSA-ARCHITECTURE.drawio`**
 
@@ -793,13 +793,60 @@ Pour éviter de répéter ces instructions pour chaque graphique, il est possibl
 génére un graphe d'appel des programmes
 ```
 
-### 💡 Valeur Ajoutée IBM Bob Premium Package for Z
+#### 💡 Valeur Ajoutée IBM Bob Premium Package for Z
 
 | Sans Bob | Avec IBM Bob Premium Package for Z |
 |----------|------------------------|
 | 1-2 jours de création manuelle | 5 minutes de génération automatique |
 | Diagramme statique (PowerPoint) | Format éditable (Draw.io) |
 | Mise à jour difficile | Régénération facile |
+
+### Étape 2 — 🎯 Objectif : Génération du graphe d'appels (Call Graph)
+
+Générer des graphes d'appels complets pour l'ensemble des programmes de l'espace de travail et de la base de données locale, organisés par thématiques fonctionnelles.
+
+#### 🔧 Mode Bob à utiliser
+
+**Mode : 📐 Z Architect**
+
+Le mode Z Architect est idéal pour cartographier les relations entre programmes, tracer les chaînes d'appels et produire une documentation structurée montrant comment les programmes interagissent à travers les différents domaines fonctionnels.
+
+#### 📝 Contexte
+
+Le schéma d'architecture de l'Étape 1 donne une vue d'ensemble des couches applicatives. Les graphes d'appels vont un niveau plus loin : ils montrent **précisément quel programme appelle quel autre**, permettant ainsi aux développeurs et aux architectes de :
+
+- tracer les chemins d'exécution de bout en bout
+- identifier les sous-programmes partagés et les modèles de réutilisation
+- comprendre le couplage entre les différents domaines fonctionnels
+- faciliter l'intégration rapide de nouveaux membres de l'équipe sur des flux métiers spécifiques
+
+L'organisation des résultats par **thématique fonctionnelle** (ex. : gestion des comptes, gestion des clients, traitement des paiements) rend la documentation immédiatement exploitable, même pour des espaces de travail très volumineux.
+
+#### ✍️ Votre tâche
+
+Rédigez votre propre prompt pour demander la documentation des graphes d'appels, couvrant tous les programmes de l'espace de travail ainsi que la base de données locale, regroupés par fonction métier.
+
+**Attendu dans votre prompt :**
+
+- demander les graphes d'appels pour tous les programmes de l'espace de travail
+- inclure la base de données locale dans le périmètre d'analyse
+- organiser le résultat par thématiques fonctionnelles
+- produire le résultat sous forme de documentation structurée (ex. : un fichier Markdown)
+
+#### 💬 Prompt Bob
+
+```text
+Créer une documentation avec des graphes d'appels de tous les programmes, organisés par domaine fonctionnel. 
+```
+
+#### ✅ Exemple de résultat
+
+Bob produit un document Markdown (ex. : `docs/cbsa-call-graphs.md`) contenant :
+
+- Une section par thématique fonctionnelle (Gestion des comptes, Gestion des clients, Traitement des paiements, Services utilitaires, …)
+- Pour chaque thématique : un graphe d'appels Mermaid illustrant la chaîne d'appels complète entre les programmes CICS, les copybooks et les procédures stockées Db2
+- Des références croisées vers les tables de la base de données accédées au sein de chaque chaîne d'appels
+- Un tableau récapitulatif listant tous les programmes, leurs appelants et leurs appelés
 
 ---
 
