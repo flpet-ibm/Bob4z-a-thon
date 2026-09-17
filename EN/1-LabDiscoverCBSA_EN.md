@@ -640,21 +640,22 @@ Improve the following code from base/cobol_src/BNK1CAC.cbl:239-254
 ## Exercise 3: Architecture Diagram Creation
 [↩️](#-table-of-contents)
 
-### 🎯 Objective
+
+### Step 1 - 🎯 Objective
 
 Create a visual architecture diagram in Draw.io format showing application layers and data flows.
 
-### 🔧 Bob Mode to Use
+#### 🔧 Bob Mode to Use
 
 **Mode: 📐 Z Architect**
 
 Z Architect mode specializes in creating architecture diagrams and analyzing application flows.
 
-### 📝 Context
+#### 📝 Context
 
 The textual inventory is useful, but a visual representation is essential for communicating the architecture.
 
-### ✍️ Your Prompt
+#### ✍️ Your Prompt
 
 Write your own prompt to request a visual architecture diagram of the application.
 
@@ -664,13 +665,13 @@ Write your own prompt to request a visual architecture diagram of the applicatio
 - request key flows and dependencies
 - request integration of external resources and data
 
-### ✅ Recommended Prompt
+#### ✅ Recommended Prompt
 
 ```text
 Build an architecture diagram (in draw.io) illustrating the program dependencies of the CBSA application.
 ```
 
-### 🔀 Prompt Variants
+#### 🔀 Prompt Variants
 
 ```text
 Produce a Draw.io diagram of the CBSA architecture with functional layers, components, and data flows.
@@ -680,7 +681,7 @@ Produce a Draw.io diagram of the CBSA architecture with functional layers, compo
 Visually document the CBSA architecture in a Draw.io file representing programs, databases, and major dependencies.
 ```
 
-### ✅ Sample Result
+#### ✅ Sample Result
 
 **File created: `docs/CBSA-ARCHITECTURE.drawio`**
 
@@ -707,13 +708,53 @@ change @docs/CBSA-archi-dependances.drawio so that all texts are written in blac
 generate a program call graph
 ```
 
-### 💡 IBM Bob Premium Package for Z Added Value
+#### 💡 IBM Bob Premium Package for Z Added Value
 
 | Without Bob | With IBM Bob Premium Package for Z |
 |----------|------------------------|
 | 2-3 days of manual creation | 5 minutes of automatic generation |
 | Static diagram (PowerPoint) | Editable format (Draw.io) |
 | Difficult to update | Easy regeneration |
+
+### Step 2 — 🎯 Objective: Call Graph Generation
+Generate comprehensive call graphs for all programs in the workspace and the local database, organized by functional topics.
+
+#### 🔧 Bob Mode to Use
+**Mode: 📐 Z Architect**
+
+Z Architect mode is ideal for mapping inter-program relationships, tracing call chains, and producing structured documentation that shows how programs collaborate across functional domains.
+
+#### 📝 Context
+The architecture diagram from Step 1 gives a high-level view of the application layers. Call graphs go one level deeper: they show exactly which program calls which, enabling developers and architects to:
+
+trace execution paths end-to-end
+identify shared subroutines and reuse patterns
+understand coupling between functional areas
+onboard new team members onto specific business flows quickly
+Organizing the output by functional topic (e.g., account management, customer management, payment processing) makes the documentation immediately useful even for very large workspaces.
+
+#### ✍️ Your Task
+Write your own prompt to request call graph documentation, covering all programs in the workspace and the local database, grouped by business function.
+
+#### Expected in your prompt:
+
+request call graphs for all programs in the workspace
+include the local database in the analysis scope
+organize the output by functional topics
+produce the result as structured documentation (e.g., a Markdown file)
+
+#### 💬 Bob Prompt
+```text
+Create documentation with comprehensive call graphs of all programs in the workspace and the local database, organized by functional topics.
+```
+
+#### ✅ Sample Result
+Bob produces a Markdown document (e.g., docs/cbsa-call-graphs.md) containing:
+
+One section per functional topic (Account Management, Customer Management, Payment Processing, Utility Services, …)
+For each topic: a Mermaid call graph showing the full call chain between CICS programs, copybooks, and Db2 stored procedures
+Cross-references to database tables accessed within each call chain
+A summary table listing all programs, their callers, and their callees
 
 ---
 
