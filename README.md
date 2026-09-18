@@ -11,7 +11,7 @@ A Hackathon to Discover IBM Bob Premium Package for Z
 
 + The next lab [LabSkillBuilder-Refactor](./EN/3-LabSkillBuilder-Refactor_EN.md) — estimated 1–2h - allows you to experiment with creating a skill to optimize COBOL program generation.
 
-+ Finally, the lab [LabOptimizeSQL&DB2Config](./FR/4-LabOptimizeSQL&DB2Config.md) — estimated 1–2h - allows you to work on the optimisation of SQL statements and DB2 configuration of the application CBSA.
++ Finally, the lab [LabOptimizeSQL&DB2Config](./EN/4-LabOptimizeSQL&DB2Config_EN.md)) — estimated 1–2h - allows you to work on the optimisation of SQL statements and DB2 configuration of the application CBSA.
   
 
 1 - Discover CBSA — estimated 3–4h
