@@ -11,7 +11,7 @@ Un Hackathon pour découvrir le package IBM Bob Premium pour Z
 
 + Le lab suivant [LabSkillBuilder-Refactor](./FR/3-LabSkillBuilder-Refactor.md) — durée estimée : 1–2h — vous permet d'expérimenter la création d'une skill pour optimiser la génération de programmes COBOL.
 
-+ Enfin le lab[LabSkillBuilder-Refactor](./FR/4-LabOptimizeSQL&DB2Config.md) — durée estimée : 1–2h — vous permet de travailler sur l'optimisation des requêtes SQL et des accès DB2 dans l'application CBSA.
++ Enfin le lab[LabOptimizeSQL&DB2Config](./FR/4-LabOptimizeSQL&DB2Config.md) — durée estimée : 1–2h — vous permet de travailler sur l'optimisation des requêtes SQL et des accès DB2 dans l'application CBSA.
 
 
 ## Ce Bobathon a été préparé par
