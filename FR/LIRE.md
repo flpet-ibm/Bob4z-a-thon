@@ -5,7 +5,7 @@ Un Hackathon pour découvrir le package IBM Bob Premium pour Z
 
 ## Quatre labs sont proposés dans ce hackathon :
 
-+ Le lab principal [LabDiscoverCBSA](1-LabDiscoverCBSA.md) — durée estimée : 3–4h — vous permettra de découvrir l'application COBOL CBSA. Vous pourrez inventorier l'application, en découvrir l'architecture, documenter et interroger des programmes ou des fonctions de l'application. Vous pourrez ensuite étudier une évolution de l'application avec l'implémentation correspondante. <b>Remarque : le chapitre 3 [Préparation du lab](1-LabDiscoverCBSA_EN.md#3-lab-preparation) détaille les prérequis pour les trois labs.</b>
++ Le lab principal [LabDiscoverCBSA](1-LabDiscoverCBSA.md) — durée estimée : 3–4h — vous permettra de découvrir l'application COBOL CBSA. Vous pourrez inventorier l'application, en découvrir l'architecture, documenter et interroger des programmes ou des fonctions de l'application. Vous pourrez ensuite étudier une évolution de l'application avec l'implémentation correspondante. <b>Remarque : le chapitre 3 [Préparation du lab](1-LabDiscoverCBSA.md#3-préparation-du-lab ) détaille les prérequis pour les trois labs.</b>
 
 + Le lab suivant [LabDiscoverCBSAGlobal](2-LabDiscoverCBSAGlobal.md) — durée estimée : 1–2h (pour les personnes intéressées par le frontend Java) — vous permet d'étendre l'analyse au frontend de l'application. Cela permet d'enrichir l'analyse des processus métiers.
 
