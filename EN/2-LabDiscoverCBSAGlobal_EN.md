@@ -223,6 +223,7 @@ Create a data dictionary for the BNKMENU program
 
 ### Objective
 Create a complete inventory of all COBOL programs with their dependencies, classifications, and relationships.
+(This exercise is also in the 1rst lab - LabDicoverCBSA. If you already did it, skip this exercise)
 
 ### Bob Mode to Use
 🧰 **Z Code**
@@ -409,7 +410,7 @@ make a detailed diagram of the front end part
 ## Exercise 6: Functional Analysis - Local Transfer
 
 ### Objective
-Understand in depth how the local funds transfer transaction works.
+In the previous exercises, you should have discovered the different transactions of the application. Here we are focusing on one of these transaction. Understand in depth how the local funds transfer transaction works.
 
 ### Bob Mode to Use
 🧰 **Z Code**
