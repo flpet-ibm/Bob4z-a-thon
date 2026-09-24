@@ -436,14 +436,14 @@ Analyze this mainframe repository, identify key components and prepare necessary
 
 Bob will:
 
-- Analyze the COBOL workspace (structure, languages, files)
-- Detect present mainframe languages
-- Check for data dictionary existence (bobz/DD.json)
-- Search for coding standards
-- Locate technical documentation
-- Map COBOL programs to their documentation
-- Display detected configuration for confirmation
-- Update AGENTS.md with non-obvious information
+***Analyze the COBOL workspace (structure, languages, files)***
+***Detect present mainframe languages***
+***Check for data dictionary existence (bobz/DD.json)***
+***Search for coding standards***
+***Locate technical documentation***
+***Map COBOL programs to their documentation***
+***Display detected configuration for confirmation***
+***Update AGENTS.md with non-obvious information***
 
 ### ✅ Add more z/OS knowledge (languages, middleware...) to your repository (will be automatic in the next version)
 
