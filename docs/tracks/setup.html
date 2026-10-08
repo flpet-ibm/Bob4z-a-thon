@@ -1,16 +1,16 @@
 <div class="bubble-card track-0" id="card-setup">
   <div class="card-summary">
-    <div class="card-icon" aria-label="Environment setup">
+    <div class="card-icon" aria-label="Setup and Background">
       <svg viewBox="0 0 24 24" fill="none" stroke="var(--c0)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M16.24 7.76a6 6 0 0 1 0 8.49M4.93 4.93a10 10 0 0 0 0 14.14M7.76 7.76a6 6 0 0 0 0 8.49"/>
       </svg>
     </div>
     <div class="card-text">
-      <div class="card-label">Setup</div>
-      <div class="card-title">Environment Setup &amp; Prerequisites</div>
-      <div class="card-desc">Install IBM Bob IDE with the IBM Bob Premium Package for Z extension, clone the CBSA repository, and prepare your workspace before starting any lab.</div>
+      <div class="card-label">Setup and Background</div>
+      <div class="card-title">Environment Setup and understand the CBSA  application  </div>
+      <div class="card-desc">Install Bob, get the application source code, learn about the CBSA application and lab objectives</div>
       <div class="card-meta">
-        <span class="card-tag">~15 min</span>
+        <span class="card-tag">~20 min</span>
         <span class="card-tag">Required for all labs</span>
         <span class="card-tag">Agent mode</span>
       </div>
@@ -22,14 +22,15 @@
 
   <div class="card-detail">
     <div class="card-detail-inner">
-      <div class="detail-intro">Complete these steps once before starting any lab. The CBSA workspace and extensions are shared across all four lab tracks.</div>
+      <div class="detail-intro">Start here. Read the background context to understand what you will be working on, then complete the setup steps once before starting any lab. The CBSA workspace and extensions are shared across all lab tracks.</div>
 
       <div class="use-cases">
 
+        <!-- Setup section 1: Install IBM Bob -->
         <div class="use-case">
           <div class="use-case-header">
             <div class="uc-num">1</div>
-            <div class="uc-title">Install IBM Bob IDE &amp; the Premium Package for Z</div>
+            <div class="uc-title">Install IBM Bob IDE</div>
             <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
           </div>
           <div class="uc-body"><div class="uc-body-inner">
@@ -38,35 +39,22 @@
               <div class="mode-step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Download &amp; install IBM Bob IDE</div>
-                  <div class="step-desc">Get the desktop app from <strong>bob.ibm.com/download</strong> — available for macOS, Windows, and Linux. Accept the invitation email first to activate your IBM ID and team access.</div>
+                  <div class="step-title">Accept the team invite</div>
+                  <div class="step-desc">Accept the invitation email first to activate your IBM ID and team access.</div>
                 </div>
               </div>
               <div class="mode-step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Install required VS Code extensions</div>
-                  <div class="step-desc">In Bob IDE, open the Extensions panel (<code>Cmd/Ctrl+Shift+X</code>) and install:
-                    <ul style="margin-top:6px;padding-left:18px;font-size:0.78rem;color:var(--muted);line-height:1.8">
-                      <li><strong style="color:var(--text)">IBM Bob Premium Package for Z</strong> v3.0.0+</li>
-                      <li><strong style="color:var(--text)">IBM Z Open Editor</strong> v6.6.0+</li>
-                      <li><strong style="color:var(--text)">Zowe Explorer</strong> v3.5.0+</li>
-                      <li><strong style="color:var(--text)">Mermaid</strong> (latest)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="mode-step">
-                <div class="step-num">3</div>
-                <div class="step-body">
-                  <div class="step-title">Activate the Premium Package for Z in Bob settings</div>
-                  <div class="step-desc">Open Bob settings and confirm the <strong>Z Code</strong> and <strong>Z Architect</strong> modes appear in the mode selector. If not, verify your Premium Package entitlement in the IBM Bob Administration portal.</div>
+                  <div class="step-title">Download &amp; install IBM Bob IDE</div>
+                  <div class="step-desc">⚠️ Skip this step, if you are using an IBM provided environment or laptop. 
+                    <br>Otherwise, get the desktop app from <strong>bob.ibm.com/download</strong> — available for macOS, Windows, and Linux.</div>
                 </div>
               </div>
             </div>
           </div></div>
         </div>
-
+        <!-- Setup section 2: Clone CBSA -->
         <div class="use-case">
           <div class="use-case-header">
             <div class="uc-num">2</div>
@@ -101,29 +89,128 @@
             </div>
           </div></div>
         </div>
-
+        <!-- Setup section 3: Install IBM Bob -->
         <div class="use-case">
           <div class="use-case-header">
             <div class="uc-num">3</div>
-            <div class="uc-title">About the CBSA Application</div>
+            <div class="uc-title">Verify IBM Bob Premium Package for Z access</div>
             <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
           </div>
           <div class="uc-body"><div class="uc-body-inner">
-            <p class="uc-desc">The <strong>CICS Banking Sample Application (CBSA)</strong> is a real banking application simulating bank teller operations. This is the application you will analyze, document, and modernize throughout the labs.</p>
-            <table class="value-table" style="margin-top:8px">
+            <p class="uc-desc">Verify your access to <strong>IBM Bob Premium Package for Z</strong>.</p>
+            <div class="mode-steps">
+              <div class="mode-step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                  <div class="step-title">Login to Bob</div>
+                  <div class="step-desc">Use the blue <strong>Login to Bob</strong> button on the right-hand Bob chat panel. When Bob asks for permission to open an external website, choose <strong>Open</strong>. Sign in with your IBM ID. Once logged in, Bob will prompt you to install the <strong>IBM Bob Premium Package for Z</strong> — accept the installation.</div>
+                </div>
+              </div>
+              <div class="mode-step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                  <div class="step-title">Verify extensions</div>
+                  <div class="step-desc">In Bob IDE, open the Extensions panel (<code>Cmd/Ctrl+Shift+X</code>) and verify that these extensions are installed:
+                    <ul style="margin-top:6px;padding-left:18px;font-size:0.78rem;color:var(--muted);line-height:1.8">
+                      <li><strong style="color:var(--text)">IBM Bob Premium Package for Z</strong> v3.0.0+</li>
+                      <li><strong style="color:var(--text)">IBM Z Open Editor</strong> v6.6.0+</li>
+                      <li><strong style="color:var(--text)">Zowe Explorer</strong> v3.5.0+</li>
+                      <li><strong style="color:var(--text)">Mermaid</strong> (latest)</li>
+                    </ul>
+                    If they are not installed, contact your IBM representative, as you do not have entitlement for the IBM Bob Premium Package for Z
+                  </div>
+                </div>
+              </div>
+              <div class="mode-step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <div class="step-title">Verify Z Modes</div>
+                  <div class="step-desc">Look at the mode selector in the <strong>bottom-right corner</strong> of the Bob chat panel. Click it to open the mode list and confirm that <strong>Z Code</strong> and <strong>Z Architect</strong> are present. If they are missing, the Premium Package for Z is not activated — contact your IBM representative.</div>
+                </div>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Section 4: Lab Context -->
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">1</div>
+            <div class="uc-title">The CBSA Application</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">You will work on a real banking application that simulates bank teller operations: the <strong>CICS Banking Sample Application (CBSA)</strong>.</p>
+
+            <p class="uc-desc" style="margin-top:10px"><strong>Technical characteristics</strong></p>
+            <table class="value-table" style="margin-top:6px">
               <thead><tr><th>Attribute</th><th>Details</th></tr></thead>
               <tbody>
                 <tr><td>Platform</td><td>IBM z/OS with CICS Transaction Server V5.4+</td></tr>
                 <tr><td>Language</td><td>IBM Enterprise COBOL for z/OS</td></tr>
                 <tr><td>Database</td><td>IBM Db2 V12+</td></tr>
                 <tr><td>Interface</td><td>3270 terminals with BMS (Basic Mapping Support)</td></tr>
-                <tr><td>Programs</td><td>29 COBOL programs, 37 copybooks, 9 BMS screens</td></tr>
-                <tr><td>Tables</td><td>4 Db2 tables (ACCOUNT, CUSTOMER, PROCTRAN, CONTROL)</td></tr>
+                <tr><td>Architecture</td><td>Transaction processing with online and batch programs</td></tr>
               </tbody>
             </table>
+
+            <p class="uc-desc" style="margin-top:14px"><strong>Business functionalities</strong></p>
+            <ul style="margin-top:4px;padding-left:18px;font-size:0.82rem;color:var(--muted);line-height:1.8">
+              <li>Customer creation and management</li>
+              <li>Bank account creation and management</li>
+              <li>Account inquiry</li>
+              <li>Transfers between accounts</li>
+              <li>Account debit / credit</li>
+              <li>External credit agency simulation</li>
+            </ul>
+
+            <p class="uc-desc" style="margin-top:14px"><strong>Complexity</strong></p>
+            <ul style="margin-top:4px;padding-left:18px;font-size:0.82rem;color:var(--muted);line-height:1.8">
+              <li>29 COBOL programs</li>
+              <li>37 copybooks</li>
+              <li>9 BMS screens</li>
+              <li>4 Db2 tables</li>
+              <li>Multi-tier architecture (presentation, business logic, data)</li>
+            </ul>
+
+            <p class="uc-desc" style="margin-top:14px"><strong>Initial situation</strong></p>
+            <p class="uc-desc">You have just joined the maintenance team for this application. You have the source code but:</p>
+            <ul style="margin-top:4px;padding-left:18px;font-size:0.82rem;color:var(--muted);line-height:1.8">
+              <li>❌ No up-to-date technical documentation</li>
+              <li>❌ No program inventory</li>
+              <li>❌ Undocumented architecture</li>
+              <li>❌ Business rules not formalized</li>
+              <li>❌ Dependencies between programs unknown</li>
+              <li>❌ Impact of modifications difficult to assess</li>
+            </ul>
+            <div class="info-box" style="margin-top:14px"><strong>Your mission:</strong> Use IBM Bob Premium Package for Z to analyze and document this application in a few hours instead of several weeks.</div>
             <div class="warn-box">⚠️ <strong>Note on AI non-determinism:</strong> Bob relies on AI agentics which is non-deterministic. You may see slight differences from the sample results shown in the labs. This is normal — Bob always reaches the goal but may take different paths.</div>
           </div></div>
         </div>
+
+        <!-- Section 5: Learning Objectives -->
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">2</div>
+            <div class="uc-title">Learning Objectives</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">At the end of these labs, you will be able to:</p>
+            <ul style="margin-top:8px;padding-left:18px;font-size:0.85rem;color:var(--muted);line-height:2.0">
+              <li>✅ <strong style="color:var(--text)">Initialize</strong> a mainframe workspace with IBM Bob Premium Package for Z</li>
+              <li>✅ <strong style="color:var(--text)">Automatically generate</strong> a complete application inventory</li>
+              <li>✅ <strong style="color:var(--text)">Create</strong> visual architecture diagrams and comprehensive call graphs</li>
+              <li>✅ <strong style="color:var(--text)">Analyze</strong> business rules buried in code</li>
+              <li>✅ <strong style="color:var(--text)">Assess</strong> the impact of modifications on the application</li>
+              <li>✅ <strong style="color:var(--text)">Document</strong> user journeys</li>
+              <li>✅ <strong style="color:var(--text)">Propose</strong> technical evolutions with feasibility analysis</li>
+            </ul>
+          </div></div>
+        </div>
+
+
+        <!-- Setup section 3: About CBSA (removed — now covered by section 1 above) -->
 
       </div>
     </div>
