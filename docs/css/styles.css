@@ -11,7 +11,8 @@
   --muted:     #8b92a8;
   --radius:    16px;
 
-  /* ── Per-track colors (Setup + 4 labs) ── */
+  /* ── Per-track colors (Background + Setup + 4 labs) ── */
+  --cbg: #6b7280; /* Background — Slate gray   */
   --c0: #0057B8;  /* Setup  — IBM Blue      */
   --c1: #0e7490;  /* Lab 1  — Teal          */
   --c2: #1a7a4a;  /* Lab 2  — Green         */
@@ -19,6 +20,7 @@
   --c4: #7c3aed;  /* Lab 4  — Indigo        */
 
   /* ── Per-track glow ── */
+  --glow-bg: rgba(107,114,128,0.18);   --glow-bg-shadow: rgba(107,114,128,0.12);
   --glow-0: rgba(0,87,184,0.18);       --glow-0-shadow: rgba(0,87,184,0.12);
   --glow-1: rgba(14,116,144,0.18);     --glow-1-shadow: rgba(14,116,144,0.12);
   --glow-2: rgba(26,122,74,0.18);      --glow-2-shadow: rgba(26,122,74,0.12);
@@ -318,6 +320,7 @@ pre, code, kbd, samp {
 }
 .bubble-card.bubble-in { opacity: 1; transform: translateY(0) scale(1); }
 
+.bubble-card.track-bg.bubble-in { border-left-color: var(--cbg); }
 .bubble-card.track-0.bubble-in { border-left-color: var(--c0); }
 .bubble-card.track-1.bubble-in { border-left-color: var(--c1); }
 .bubble-card.track-2.bubble-in { border-left-color: var(--c2); }
@@ -328,6 +331,7 @@ pre, code, kbd, samp {
   transform: translateY(-4px) scale(1);
   transition: box-shadow 220ms var(--ease-out), transform 220ms var(--ease-out);
 }
+.bubble-card.track-bg:not(.open):hover { box-shadow: 0 0 0 1px var(--glow-bg), 0 12px 40px var(--glow-bg-shadow), 0 4px 24px rgba(0,0,0,0.45); }
 .bubble-card.track-0:not(.open):hover { box-shadow: 0 0 0 1px var(--glow-0), 0 12px 40px var(--glow-0-shadow), 0 4px 24px rgba(0,0,0,0.45); }
 .bubble-card.track-1:not(.open):hover { box-shadow: 0 0 0 1px var(--glow-1), 0 12px 40px var(--glow-1-shadow), 0 4px 24px rgba(0,0,0,0.45); }
 .bubble-card.track-2:not(.open):hover { box-shadow: 0 0 0 1px var(--glow-2), 0 12px 40px var(--glow-2-shadow), 0 4px 24px rgba(0,0,0,0.45); }
@@ -360,6 +364,7 @@ pre, code, kbd, samp {
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--muted); margin-bottom: 4px;
 }
+.track-bg .card-label { color: var(--cbg); }
 .track-0 .card-label { color: var(--c0); }
 .track-1 .card-label { color: var(--c1); }
 .track-2 .card-label { color: var(--c2); }
@@ -432,6 +437,7 @@ pre, code, kbd, samp {
   transition: transform 300ms var(--ease-spring);
 }
 .use-case.uc-open .uc-num { transform: scale(1.2); }
+.track-bg .uc-num { background: var(--cbg); }
 .track-0 .uc-num { background: var(--c0); }
 .track-1 .uc-num { background: var(--c1); }
 .track-2 .uc-num { background: var(--c2); }
@@ -460,6 +466,7 @@ pre, code, kbd, samp {
   font-size: 0.72rem; font-weight: 800; flex-shrink: 0;
   color: white; margin-top: 1px;
 }
+.track-bg .step-num { background: var(--cbg); }
 .track-0 .step-num { background: var(--c0); }
 .track-1 .step-num { background: var(--c1); }
 .track-2 .step-num { background: var(--c2); }
