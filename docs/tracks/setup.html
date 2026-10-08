@@ -1,0 +1,131 @@
+<div class="bubble-card track-0" id="card-setup">
+  <div class="card-summary">
+    <div class="card-icon" aria-label="Environment setup">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--c0)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M16.24 7.76a6 6 0 0 1 0 8.49M4.93 4.93a10 10 0 0 0 0 14.14M7.76 7.76a6 6 0 0 0 0 8.49"/>
+      </svg>
+    </div>
+    <div class="card-text">
+      <div class="card-label">Setup</div>
+      <div class="card-title">Environment Setup &amp; Prerequisites</div>
+      <div class="card-desc">Install IBM Bob IDE with the IBM Bob Premium Package for Z extension, clone the CBSA repository, and prepare your workspace before starting any lab.</div>
+      <div class="card-meta">
+        <span class="card-tag">~15 min</span>
+        <span class="card-tag">Required for all labs</span>
+        <span class="card-tag">Agent mode</span>
+      </div>
+    </div>
+    <div class="card-chevron" aria-hidden="true">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l5 5 5-5"/></svg>
+    </div>
+  </div>
+
+  <div class="card-detail">
+    <div class="card-detail-inner">
+      <div class="detail-intro">Complete these steps once before starting any lab. The CBSA workspace and extensions are shared across all four lab tracks.</div>
+
+      <div class="use-cases">
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">1</div>
+            <div class="uc-title">Install IBM Bob IDE &amp; the Premium Package for Z</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">You need IBM Bob IDE (VS Code-based) with the <strong>IBM Bob Premium Package for Z</strong> extension activated.</p>
+            <div class="mode-steps">
+              <div class="mode-step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                  <div class="step-title">Download &amp; install IBM Bob IDE</div>
+                  <div class="step-desc">Get the desktop app from <strong>bob.ibm.com/download</strong> — available for macOS, Windows, and Linux. Accept the invitation email first to activate your IBM ID and team access.</div>
+                </div>
+              </div>
+              <div class="mode-step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                  <div class="step-title">Install required VS Code extensions</div>
+                  <div class="step-desc">In Bob IDE, open the Extensions panel (<code>Cmd/Ctrl+Shift+X</code>) and install:
+                    <ul style="margin-top:6px;padding-left:18px;font-size:0.78rem;color:var(--muted);line-height:1.8">
+                      <li><strong style="color:var(--text)">IBM Bob Premium Package for Z</strong> v3.0.0+</li>
+                      <li><strong style="color:var(--text)">IBM Z Open Editor</strong> v6.6.0+</li>
+                      <li><strong style="color:var(--text)">Zowe Explorer</strong> v3.5.0+</li>
+                      <li><strong style="color:var(--text)">Mermaid</strong> (latest)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="mode-step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <div class="step-title">Activate the Premium Package for Z in Bob settings</div>
+                  <div class="step-desc">Open Bob settings and confirm the <strong>Z Code</strong> and <strong>Z Architect</strong> modes appear in the mode selector. If not, verify your Premium Package entitlement in the IBM Bob Administration portal.</div>
+                </div>
+              </div>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">2</div>
+            <div class="uc-title">Clone the CBSA Application Source Code</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Create a <code>~/CBSA</code> directory, open it in Bob IDE, then clone the source code from a terminal.</p>
+            <div class="mode-steps">
+              <div class="mode-step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                  <div class="step-title">Create the workspace folder &amp; open it in Bob IDE</div>
+                  <div class="step-desc">Create a <code>CBSA</code> directory in your home directory. In Bob IDE, click <strong>File → Open Folder</strong> and select the <code>~/CBSA</code> directory. Trust the workspace when prompted — without it Bob IDE enters <strong>Restricted</strong> mode.</div>
+                </div>
+              </div>
+              <div class="mode-step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                  <div class="step-title">Open a terminal &amp; clone the repository</div>
+                  <div class="step-desc">In Bob IDE, open a terminal via <strong>Terminal → New Terminal</strong>, then run:</div>
+                </div>
+              </div>
+            </div>
+            <div class="step-prompt"><pre>git clone https://github.com/fbh112/CBSA-base-source.git</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Outputs: Once cloned, you will find the following subdirectories under your workspace:
+              <pre style="margin-top:8px;margin-bottom:0"><strong>CBSA-base-source/</strong>
+  ├── README.md
+  ├── <strong>bms_src/</strong>       (CICS BMS screens)
+  ├── <strong>cobol_copy/</strong>    (copybooks)
+  └── <strong>cobol_src/</strong>     (29 COBOL programs)</pre>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">3</div>
+            <div class="uc-title">About the CBSA Application</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">The <strong>CICS Banking Sample Application (CBSA)</strong> is a real banking application simulating bank teller operations. This is the application you will analyze, document, and modernize throughout the labs.</p>
+            <table class="value-table" style="margin-top:8px">
+              <thead><tr><th>Attribute</th><th>Details</th></tr></thead>
+              <tbody>
+                <tr><td>Platform</td><td>IBM z/OS with CICS Transaction Server V5.4+</td></tr>
+                <tr><td>Language</td><td>IBM Enterprise COBOL for z/OS</td></tr>
+                <tr><td>Database</td><td>IBM Db2 V12+</td></tr>
+                <tr><td>Interface</td><td>3270 terminals with BMS (Basic Mapping Support)</td></tr>
+                <tr><td>Programs</td><td>29 COBOL programs, 37 copybooks, 9 BMS screens</td></tr>
+                <tr><td>Tables</td><td>4 Db2 tables (ACCOUNT, CUSTOMER, PROCTRAN, CONTROL)</td></tr>
+              </tbody>
+            </table>
+            <div class="warn-box">⚠️ <strong>Note on AI non-determinism:</strong> Bob relies on AI agentics which is non-deterministic. You may see slight differences from the sample results shown in the labs. This is normal — Bob always reaches the goal but may take different paths.</div>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

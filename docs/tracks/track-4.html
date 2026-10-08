@@ -1,0 +1,146 @@
+<div class="bubble-card track-4" id="card-4">
+  <div class="card-summary">
+    <div class="card-icon" aria-label="SQL Optimization and DB2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--c4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+      </svg>
+    </div>
+    <div class="card-text">
+      <div class="card-label">Lab 4 · ~1–2 hours</div>
+      <div class="card-title">Static SQL Optimization &amp; Db2 Configuration</div>
+      <div class="card-desc">Inventory all embedded SQL statements, reverse-engineer the Db2 physical schema into an ERD, identify performance anti-patterns, implement the missing index, and export the diagram to draw.io.</div>
+      <div class="card-meta">
+        <span class="card-tag">~1–2 hours</span>
+        <span class="card-tag">🧰 Z Code</span>
+        <span class="card-tag">💻 Agent</span>
+        <span class="card-tag">Db2 for z/OS</span>
+      </div>
+    </div>
+    <div class="card-chevron" aria-hidden="true">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l5 5 5-5"/></svg>
+    </div>
+  </div>
+
+  <div class="card-detail">
+    <div class="card-detail-inner">
+      <div class="detail-intro">A database-focused lab. You will perform automated cross-module SQL discovery, evaluate Db2 access paths and locking behaviour, translate z/OS DDL into visual models, and actually implement the top performance recommendation.</div>
+
+      <div class="use-cases">
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">1</div>
+            <div class="uc-title">Exercise 1 — SQL Statement Inventory &amp; Analysis</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Catalog all <code>EXEC SQL ... END-EXEC</code> blocks across the 10 COBOL modules that use embedded Db2 SQL. For each statement, identify potential optimizations and best-practice deviations.</p>
+            <div class="mode-badge mode-badge-zcode">🧰 Z Code mode — new task</div>
+            <div class="step-prompt"><pre>create a md report about SQL statements in the application. For each COBOL module, SQL statements should be listed with a text explaining the potential optimizations or SQL statements best practice deviations.</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output: <strong><code>docs/CBSA-analysis-sql-statements.md</code></strong> covering 10 COBOL modules. Key anti-patterns identified:
+              <ul style="margin-top:6px;padding-left:18px;font-size:0.78rem;line-height:1.8">
+                <li>Concurrency hotspot on <code>CONTROL</code> table sequence management</li>
+                <li>Full-row rewrite during balance updates in DBCRFUN and XFRFUN</li>
+                <li>Single-row cursor fetch in INQACCCU instead of Multi-Row Fetch</li>
+                <li>Single-row cursor overhead for unique key lookups in INQACC</li>
+              </ul>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">2</div>
+            <div class="uc-title">Exercise 2 — Retrieve DDL JCLs from GitHub</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">The CBSA Db2 database is defined by a set of JCL scripts in the repository. Retrieve them into your workspace to enable DDL-level analysis.</p>
+            <div class="mode-badge mode-badge-agent">💻 Agent mode — new task</div>
+            <div class="step-prompt"><pre>Retrieve the directory named "CBSA/etc/install/base/db2jcl" from the GitHub repository https://github.com/ovallod/Bob4z-a-thon.git and place it in this workspace as "db2jcl". Then remove any temporary working directory you would have created.</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Bob creates <strong><code>db2jcl/</code></strong> in your workspace with JCL files: CRETB01.jcl (ACCOUNT table), CRETB02.jcl (PROCTRAN), CRETB03.jcl (CONTROL), and associated storage group/tablespace definitions.</div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">3</div>
+            <div class="uc-title">Exercise 3 — Reverse-Engineer DDL to an ERD</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Parse the DDL files (which use <code>IKJEFT01</code> / <code>DSNTEP2</code> JCL patterns) to produce a Mermaid Entity-Relationship Diagram and a physical storage hierarchy.</p>
+            <div class="mode-badge mode-badge-zcode">🧰 Z Code mode — new task</div>
+            <div class="step-prompt"><pre>using DDL files in @db2jcl create an entity relationship diagram of the database</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output: <strong><code>graph/CBSA-archi-database-erd.md</code></strong> with two Mermaid diagrams:
+              <ul style="margin-top:6px;padding-left:18px;font-size:0.78rem;line-height:1.8">
+                <li>ER diagram: ACCOUNT ↔ PROCTRAN (1:N), CUSTOMER ↔ ACCOUNT (1:N)</li>
+                <li>Physical hierarchy: Storage Groups → Tablespaces → Tables → Indexes</li>
+              </ul>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">4</div>
+            <div class="uc-title">Exercise 4 — Full-Stack Performance Improvement Analysis</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Cross-reference the DDL physical design with the SQL access patterns identified in Exercise 1 to find all performance improvement opportunities at both the database and SQL statement levels.</p>
+            <div class="mode-badge mode-badge-zcode">🧰 Z Code mode — new task</div>
+            <div class="step-prompt"><pre>according to the DDL definitions and SQL statements in the application, identify all potential performance improvements either in the SQL statements writing or in the database definition</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output: <strong><code>docs/CBSA-analysis-db2-performance-improvements.md</code></strong>. Critical findings:
+              <ul style="margin-top:6px;padding-left:18px;font-size:0.78rem;line-height:1.8">
+                <li><strong>Critical DDL</strong>: Missing index on PROCTRAN — table scans on history lookups</li>
+                <li><strong>Critical DDL</strong>: Procedural locking on CONTROL — replace with native DB2 SEQUENCE</li>
+                <li><strong>SQL</strong>: Narrow UPDATE SET clauses to cut logging by ~50%</li>
+                <li><strong>SQL</strong>: Convert INQACCCU to Multi-Row Fetch (FETCH NEXT ROWSET FOR 20 ROWS)</li>
+                <li><strong>SQL</strong>: Eliminate transfer deadlocks in XFRFUN via canonical lock ordering</li>
+              </ul>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">5</div>
+            <div class="uc-title">Exercise 5 — Implement the Missing Index</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Apply the top DDL recommendation: create the missing PROCTRAN index identified in section 3.1 of the performance report. Bob generates a production-ready JCL.</p>
+            <div class="mode-badge mode-badge-zcode">🧰 Z Code mode — new task</div>
+            <div class="step-prompt"><pre>create a new JCL in order to create the missing index on PROCTRAN as pointed by paragraph 3.1 in @docs/CBSA-analysis-db2-performance-improvements.md</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output: <strong><code>db2jcl/CREI401.jcl</code></strong> — a clustering composite index on PROCTRAN (SORTCODE, NUMBER, DATE DESC, TIME DESC) using the PROCTRAN storage group.</div>
+            <div class="code-block"><pre>CREATE INDEX IBMUSER.PROCTRAN_IX1
+   ON IBMUSER.PROCTRAN (
+      PROCTRAN_SORTCODE ASC,
+      PROCTRAN_NUMBER   ASC,
+      PROCTRAN_DATE     DESC,
+      PROCTRAN_TIME     DESC)
+   USING STOGROUP PROCTRAN
+   CLUSTER;</pre></div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">6</div>
+            <div class="uc-title">Exercise 6 — Generate a Draw.io Architecture Diagram</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Export the physical storage hierarchy from the Mermaid ERD into an editable draw.io diagram — useful for architecture reviews and presentations.</p>
+            <div class="mode-badge mode-badge-zarch">📐 Z Architect mode — new task</div>
+            <div class="step-prompt"><pre>create a draw.io chart for the Physical Storage Hierarchy in @graph/CBSA-archi-database-erd.md</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output: <strong><code>graph/CBSA-archi-physical-storage-hierarchy.drawio</code></strong> — containment hierarchy: Database CBSA → Storage Groups (ACCOUNT, PROCTRAN, CONTROL) → Tablespaces → Tables → Indexes. Open with the Draw.io Integration extension or at app.diagrams.net.</div>
+            <div class="warn-box">💡 <strong>Next steps:</strong> Ask Bob to update the SQL documentation to reflect the new PROCTRAN index, or create a skill to automate this analysis workflow for future applications.</div>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

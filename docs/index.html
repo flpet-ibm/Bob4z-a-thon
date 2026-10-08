@@ -1,0 +1,183 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bob4Z-a-thon — IBM Bob Premium Package for Z Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ═══ THEME TOGGLE — outside any overflow container ══════ -->
+<button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle light/dark mode">
+  <!-- Moon icon (shown in dark mode) -->
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+  <!-- Sun icon (shown in light mode) -->
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="5"/>
+    <line x1="12" y1="1"  x2="12" y2="3"/>
+    <line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="4.22" y1="4.22"  x2="5.64" y2="5.64"/>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+    <line x1="1"  y1="12" x2="3"  y2="12"/>
+    <line x1="21" y1="12" x2="23" y2="12"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+    <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>
+  </svg>
+</button>
+
+<div class="page-clip">
+<canvas id="stars-canvas"></canvas>
+
+<!-- ═══ HERO ═════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-orbit"></div>
+  <div class="hero-orbit"></div>
+  <div class="hero-orbit"></div>
+  <div class="orbit-satellite" aria-hidden="true"></div>
+  <div class="hero-badge">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+      <polygon points="6,0.5 7.5,4.5 12,4.5 8.5,7 9.8,11.5 6,9 2.2,11.5 3.5,7 0,4.5 4.5,4.5" fill="#F0AB00"/>
+    </svg>
+    IBM Bob · Premium Package for Z
+  </div>
+  <h1>
+    <span class="word-mask"><span class="word-inner" style="--d:200ms">Modernize</span></span>&#32;<span class="word-mask"><span class="word-inner" style="--d:280ms">IBM Z</span></span>&#32;<span class="word-mask"><span class="word-inner" style="--d:360ms">with</span></span><br/><span class="word-mask"><span class="word-inner word-gold" style="--d:440ms">AI-assisted</span></span>&#32;<span class="word-mask"><span class="word-inner" style="--d:520ms">tooling.</span></span>
+  </h1>
+  <p>Hands-on lab exercises using IBM Bob Premium Package for Z on the CBSA banking application. Four tracks, pick any path, work at your own pace.</p>
+  <div class="hero-pill-row">
+    <button class="hero-cta" id="hero-cta-btn">
+      Pick Your Lab
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="new-to-bob-btn" id="new-to-bob-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      New to Bob?
+    </button>
+  </div>
+</section>
+
+<!-- ═══ NEW-TO-BOB MODAL ══════════════════════════════════ -->
+<div class="ntb-overlay" id="ntb-overlay" role="dialog" aria-modal="true" aria-labelledby="ntb-title">
+  <div class="ntb-modal">
+    <button class="ntb-close" id="ntb-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="ntb-tabs" role="tablist">
+      <button class="ntb-tab ntb-tab-active" id="ntb-tab-1" role="tab" aria-selected="true" aria-controls="ntb-panel-1" data-ntb-tab="1">
+        <span class="ntb-tab-num">1</span>
+        Install Bob
+      </button>
+      <button class="ntb-tab" id="ntb-tab-2" role="tab" aria-selected="false" aria-controls="ntb-panel-2" data-ntb-tab="2">
+        <span class="ntb-tab-num">2</span>
+        Open a Folder
+      </button>
+    </div>
+    <div class="ntb-panels">
+      <!-- Panel 1 -->
+      <div class="ntb-panel ntb-panel-active" id="ntb-panel-1" role="tabpanel" aria-labelledby="ntb-tab-1">
+        <h3 id="ntb-title">Get IBM Bob IDE</h3>
+        <p class="ntb-subtitle">Accept your team invitation email, then install Bob IDE and activate the Premium Package for Z.</p>
+        <div class="ntb-action-cards">
+          <div class="ntb-action-card ntb-action-card--static">
+            <div class="ntb-action-icon icon-ibm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--ibm-blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="ntb-action-text">
+              <div class="ntb-action-title">Create your IBM ID</div>
+              <div class="ntb-action-desc">Open the invitation email and click the link to create your IBM ID and join the Bob team.</div>
+            </div>
+          </div>
+          <a href="https://bob.ibm.com/download" target="_blank" rel="noopener" class="ntb-action-card">
+            <div class="ntb-action-icon icon-download">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1a7a4a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </div>
+            <div class="ntb-action-text">
+              <div class="ntb-action-title">Download IBM Bob IDE</div>
+              <div class="ntb-action-desc">Available for macOS, Windows, and Linux at bob.ibm.com/download.</div>
+            </div>
+            <div class="ntb-action-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+          <a href="https://bob.ibm.com/docs/ide/premium-packages/bob-for-z/bob-for-z-index" target="_blank" rel="noopener" class="ntb-action-card">
+            <div class="ntb-action-icon icon-ext">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6M3 15h6"/>
+              </svg>
+            </div>
+            <div class="ntb-action-text">
+              <div class="ntb-action-title">Premium Package for Z Documentation</div>
+              <div class="ntb-action-desc">Full reference for Z Code, Z Architect modes, workflows, and tools.</div>
+            </div>
+            <div class="ntb-action-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        </div>
+        <button class="ntb-next-btn" id="ntb-next-btn">
+          Bob is installed — next step
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <!-- Panel 2 -->
+      <div class="ntb-panel" id="ntb-panel-2" role="tabpanel" aria-labelledby="ntb-tab-2">
+        <h3>Open Your CBSA Folder</h3>
+        <p class="ntb-subtitle">Bob needs an open folder to read files, write documentation, and build metadata. Create a dedicated <code>~/CBSA</code> folder and open it before starting.</p>
+        <div class="ntb-section">
+          <div class="ntb-row">
+            <div class="ntb-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--ibm-blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div class="ntb-row-text">
+              <div class="ntb-row-title">File → Open Folder → ~/CBSA</div>
+              <div class="ntb-row-desc">Create an empty <code>CBSA</code> directory in your home folder. In Bob IDE, go to <strong>File → Open Folder</strong> and select it. Bob will have workspace scope for all lab exercises.</div>
+            </div>
+          </div>
+        </div>
+        <div class="ntb-divider"></div>
+        <div class="ntb-section">
+          <div class="ntb-section-label">Required extensions</div>
+          <div class="ntb-row-desc" style="font-size:0.82rem;line-height:1.65;color:var(--muted)">
+            In the Extensions panel (<code>Cmd/Ctrl+Shift+X</code>) install: <strong style="color:var(--text)">IBM Bob Premium Package for Z</strong> · <strong style="color:var(--text)">IBM Z Open Editor</strong> · <strong style="color:var(--text)">Zowe Explorer</strong> · <strong style="color:var(--text)">Mermaid</strong>. See the Setup card below for exact version requirements.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TRACKS ════════════════════════════════════════════ -->
+<section class="scroll-section" id="tracks-section">
+  <div class="section-intro">
+    <h2>Choose Your Lab</h2>
+    <p>Start with Setup, then pick any lab track. Click a card to expand its step-by-step instructions — all prompts are copy-ready.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="tracks-stream" id="tracks-stream">
+    <!-- Track partials loaded by app.js -->
+  </div>
+</section>
+
+<footer>Made with IBM Bob &nbsp;&middot;&nbsp; Bob4Z-a-thon &nbsp;&middot;&nbsp; IBM Z Mainframe Modernization &nbsp;&middot;&nbsp; IBM CE EMEA Team</footer>
+
+</div><!-- /.page-clip -->
+<script src="js/app.js"></script>
+</body>
+</html>

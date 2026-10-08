@@ -1,0 +1,157 @@
+<div class="bubble-card track-2" id="card-2">
+  <div class="card-summary">
+    <div class="card-icon" aria-label="Discover CBSA Global">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--c2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    </div>
+    <div class="card-text">
+      <div class="card-label">Lab 2 · ~2–3 hours</div>
+      <div class="card-title">Discover CBSA Global (Full-Stack)</div>
+      <div class="card-desc">Extend the analysis to the CBSA Java/React frontend and z/OS Connect APIs. Inventory all components, build architecture diagrams, analyze functional flows, and generate a full user guide.</div>
+      <div class="card-meta">
+        <span class="card-tag">~2–3 hours</span>
+        <span class="card-tag">🧰 Z Code</span>
+        <span class="card-tag">📐 Z Architect</span>
+        <span class="card-tag">Complements Lab 1</span>
+      </div>
+    </div>
+    <div class="card-chevron" aria-hidden="true">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l5 5 5-5"/></svg>
+    </div>
+  </div>
+
+  <div class="card-detail">
+    <div class="card-detail-inner">
+      <div class="detail-intro">A companion to Lab 1 for participants interested in the application frontend. Adds the Java, React, and z/OS Connect layers to your analysis scope, enabling end-to-end business process documentation.</div>
+
+      <div class="use-cases">
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">0</div>
+            <div class="uc-title">Preparation — Retrieve the Frontend Source Code</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Retrieve the frontend directories from the CBSA GitHub repository and add them to your existing workspace alongside the COBOL backend.</p>
+            <div class="mode-badge mode-badge-agent">💻 Agent mode — new task</div>
+            <div class="step-prompt"><pre>Retrieve the directories named "src/bank-application-frontend", "src/webui", "src/Z-OS-Connect-Customer-Services-Interface", "src/Z-OS-Connect-Payment-Interface" and "src/zosconnect_artefacts" in the CBSA directory from the GitHub repository https://github.com/ovallod/Bob4z-a-thon.git and place them in this workspace. Then remove any temporary working directory you would have created.</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Bob retrieves 5 directories: <strong>bank-application-frontend/</strong>, <strong>webui/</strong>, <strong>Z-OS-Connect-Customer-Services-Interface/</strong>, <strong>Z-OS-Connect-Payment-Interface/</strong>, <strong>zosconnect_artefacts/</strong>.</div>
+            <div class="info-box">If you already completed Lab 1 in this workspace, you can skip Exercises 1–3 and jump directly to Exercise 4 (Frontend Inventory).</div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">1</div>
+            <div class="uc-title">Exercise 1 — Workspace Initialization (Full Stack)</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Initialize the full-stack workspace. Bob now detects both COBOL/JCL and Java 17/Maven components.</p>
+            <div class="mode-badge mode-badge-zcode">🧰 Z Code mode — new task</div>
+            <div class="step-prompt"><pre>/init</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Bob creates/updates <strong><code>AGENTS.md</code></strong> covering: COBOL programs mapping, Java/Maven build commands, z/OS Connect artifacts, data dictionary location, and multi-language workspace type.</div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">2</div>
+            <div class="uc-title">Exercise 2 — Data Dictionary Generation</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Build the data dictionary starting from the BNKMENU program — the main CICS entry point and the hub that drives all business functions.</p>
+            <div class="mode-badge mode-badge-zcode">🧰 Z Code mode — new task</div>
+            <div class="step-prompt"><pre>Create a data dictionary for the BNKMENU program</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Bob scans BNKMENU.cbl, extracts the top 15 variables, and creates <strong><code>bobz/DD.json</code></strong> with documented entries and business descriptions.</div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">3</div>
+            <div class="uc-title">Exercise 3 — COBOL Programs Inventory</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Generate a structured inventory of all backend COBOL components with their dependencies, roles, and access patterns.</p>
+            <div class="mode-badge mode-badge-zcode">🧰 Z Code mode — new task</div>
+            <div class="step-prompt"><pre>Generate a complete inventory of the CBSA COBOL programs with their type, role, dependencies, DB2 tables accessed (with access mode), and called programs.</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">4</div>
+            <div class="uc-title">Exercise 4 — Frontend Inventory (Java, React, z/OS Connect)</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Inventory the frontend layer: Java Spring Boot services, React UI components, and z/OS Connect API bindings. Understand how each tier communicates.</p>
+            <div class="mode-badge mode-badge-zcode">🧰 Z Code mode — new task</div>
+            <div class="step-prompt"><pre>Generate a complete inventory of the CBSA frontend components including Java services, React UI, z/OS Connect interfaces, their roles and API endpoints.</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Bob produces a full-stack inventory document covering the REST API layer, React component tree, z/OS Connect service bindings, and how each frontend operation maps to a backend COBOL program.</div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">5</div>
+            <div class="uc-title">Exercise 5 — Architecture Diagrams (Global + Frontend Detail)</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Create two architecture diagrams: a global view showing all tiers (browser → React → z/OS Connect → CICS → DB2), and a detailed frontend diagram.</p>
+            <div class="mode-badge mode-badge-zarch">📐 Z Architect mode — new task</div>
+            <div class="step-prompt"><pre>Build a global architecture diagram (draw.io) showing all tiers of the CBSA application: browser, React frontend, z/OS Connect APIs, CICS programs, and Db2 tables.</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="step-prompt" style="margin-top:8px"><pre>Now generate a detailed draw.io diagram of the frontend layer only, showing React components, Java services, and their connections to z/OS Connect endpoints.</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">6</div>
+            <div class="uc-title">Exercise 6 — Functional Analysis: Local Transfer Flow</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Trace the complete end-to-end flow of a local account transfer — from the React UI button click all the way through z/OS Connect, CICS programs, and Db2 tables.</p>
+            <div class="mode-badge mode-badge-zarch">📐 Z Architect mode — new task</div>
+            <div class="step-prompt"><pre>Analyze and document the complete end-to-end flow of a local transfer in CBSA, from the frontend UI through z/OS Connect to the COBOL programs and DB2 tables. Include a sequence diagram.</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">7</div>
+            <div class="uc-title">Exercise 7 — Business User Guide</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Generate a complete user guide for the CBSA banking application, covering both the web frontend and the 3270 terminal interface. Written for bank staff, non-technical audience.</p>
+            <div class="mode-badge mode-badge-ask">❓ Ask mode — new task</div>
+            <div class="step-prompt"><pre>Create a complete business user guide for the CBSA application covering all major operations: account inquiry, customer creation, transfers, and credit scoring. Target audience: non-technical bank staff.</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+          </div></div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">8</div>
+            <div class="uc-title">Exercise 8 — Technical Analysis: Credit Score Logic</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Deep-dive into the credit score simulation: how it works, what algorithm is used, what the value scale means, and how it affects account opening decisions.</p>
+            <div class="mode-badge mode-badge-zcode">🧰 Z Code mode — new task</div>
+            <div class="step-prompt"><pre>Explain how the credit score is calculated and used in the CBSA application. What are the rules and thresholds?</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="step-prompt" style="margin-top:8px"><pre>What does each range of the credit score value mean for the customer? Create a reference table with business interpretation for each band.</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

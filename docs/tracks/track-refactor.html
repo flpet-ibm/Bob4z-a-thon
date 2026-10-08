@@ -1,0 +1,151 @@
+<div class="bubble-card track-3" id="card-3">
+  <div class="card-summary">
+    <div class="card-icon" aria-label="Skill Builder and Refactor">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--c3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+      </svg>
+    </div>
+    <div class="card-text">
+      <div class="card-label">Lab 2 · ~1–2 hours</div>
+      <div class="card-title">Skill Builder &amp; VSAM→DB2 Refactoring</div>
+      <div class="card-desc">Auto-generate a reusable COBOL coding standards skill from existing code patterns. Then use the interactive refactoring workflow to migrate a VSAM-based program to DB2.</div>
+      <div class="card-meta">
+        <span class="card-tag">~1–2 hours</span>
+        <span class="card-tag">🧰 Z Code</span>
+        <span class="card-tag">📐 Z Architect</span>
+        <span class="card-tag">Advanced</span>
+      </div>
+    </div>
+    <div class="card-chevron" aria-hidden="true">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l5 5 5-5"/></svg>
+    </div>
+  </div>
+
+  <div class="card-detail">
+    <div class="card-detail-inner">
+      <div class="detail-intro">Two independent advanced exercises.<br>Exercise 1 creates a reusable coding standards skill.<br>Exercise 2 uses the built-in refactoring workflow to modernize <strong>CRECUST.cbl</strong> from VSAM to DB2 — a 90–95% time reduction vs. manual refactoring.</div>
+
+      <div class="use-cases">
+
+        <!-- Exercise 1 -->
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">1</div>
+            <div class="uc-title">Exercise 1 — Generate a Coding Standards Skill <em style="font-weight:400;font-size:0.85em">(optional if done in Lab 1)</em></div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Bob analyzes all existing COBOL programs to extract recurring patterns (naming, structures, error handling) and packages them as a reusable <strong>Bob skill</strong> — a permanent, shareable coding standard your whole team can apply.</p>
+            <div class="info-box">⏩ <strong>Already done in Lab 1?</strong> If <code>.bob/skills/cbsa-coding-standards/SKILL.md</code> already exists, skip to Exercise 2.</div>
+
+            <p class="uc-desc" style="margin-top:10px"><strong>Step 1 — Generate the skill</strong></p>
+            <div class="mode-badge mode-badge-zcode">🧰 Z Code mode — new task</div>
+            <div class="step-prompt"><pre>/z-coding-standards-skill-builder</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="info-box">Reply <strong>No</strong> when Bob asks to include ZCodeScan validation (for simplicity in the lab).</div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 2 — Customize the skill (optional)</strong></p>
+            <div class="step-prompt"><pre>Modify the coding standard skill to add the following rules:
+- Counter variables must start with CTR-
+- Validation paragraphs must end with -VALIDATION
+- Add a section on logging standards using CICS WRITEQ TD</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 3 — Verify existing code against standards</strong></p>
+            <div class="step-prompt"><pre>verify @BNK1CAC.cbl is respecting cbsa coding standards</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+
+            <div class="success-box">Outputs: <strong><code>.bob/skills/cbsa-coding-standards/SKILL.md</code></strong> and <code>.bob/skills/cbsa-coding-standards/references/....md</code>. Any future code generation in this workspace automatically respects these standards.</div>
+          </div></div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">2</div>
+            <div class="uc-title">Exercise 2 — VSAM → DB2 Refactoring of CRECUST</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Modernize <strong>CRECUST.cbl</strong> — the CBSA create customer program — by replacing all CICS VSAM file commands with DB2 SQL, while preserving the existing COMMAREA interface and functional behavior.</p>
+
+            <p class="uc-desc" style="margin-top:4px"><strong>Step 0 — Create the refactoring principles document</strong></p>
+            <div class="mode-badge mode-badge-zarch">📐 Z Architect mode — new task</div>
+            <div class="step-prompt"><pre>Create a document extractionGoal.md that defines the refactoring principles for migrating CRECUST.cbl from VSAM to DB2, including:
+
+1. Functionality Preservation — all COMMAREA inputs/outputs must remain identical
+2. Mapping VSAM Operations to SQL — READ→SELECT, WRITE→INSERT, REWRITE→UPDATE, DELETE→DELETE, STARTBR/READNEXT→CURSOR
+3. Transaction Management — COMMIT/ROLLBACK aligned with CICS syncpoints
+4. Sequential Access Optimization — DB2 cursors replacing STARTBR/READNEXT patterns
+5. Robust Error Handling — SQLCODE checks after every EXEC SQL, mirroring existing RESP checks
+6. Use of Host Variables — copybook fields used directly as DB2 host variables
+7. Performance Optimization — appropriate DB2 indexes to match current VSAM key access
+8. Structure and Modularity — paragraph-level mapping of original VSAM logic
+9. Compatibility and Progressive Migration — COMMAREA interface unchanged
+10. Documentation and Traceability — inline comments referencing the original VSAM operation replaced
+
+Also include a refactoring checklist and measurable success criteria.</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output:<br>
+              · <strong><code>extractionGoal.md</code></strong> — 10 migration principles with VSAM→DB2 mapping tables, 3-phase checklist, and measurable success criteria
+            </div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 1 — Analyze the existing VSAM operations in CRECUST</strong></p>
+            <div class="mode-badge mode-badge-zarch">📐 Z Architect mode </div>
+            <div class="step-prompt"><pre>Analyze CBSA-base-source/cobol_src/CRECUST.cbl and identify:
+- All CICS VSAM commands used (READ, WRITE, REWRITE, DELETE, STARTBR, READNEXT, ENDBR)
+- The data structures being manipulated (copybooks from cobol_copy/)
+- The VSAM file names and their access keys
+- The data access patterns (random vs sequential)
+- The complexity points for DB2 migration</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output:<br>
+              · VSAM file inventory — file name, type, key structure, record length<br>
+              · operation inventory — READ, STARTBR/READNEXT, REWRITE, WRITE, DELETE with paragraph locations<br>
+              · migration complexity table per operation and DB2 recommendations
+            </div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 2 — Design the DB2 data model</strong></p>
+            <div class="mode-badge mode-badge-zarch">📐 Z Architect mode</div>
+            <div class="step-prompt"><pre>Propose a DB2 data model to replace the CUSTOMER VSAM file used in CRECUST.cbl, including:
+- The complete table DDL definition mapped from the CUSTOMER copybook
+- The necessary indexes (primary key + secondary keys matching VSAM alternate indexes)
+- Integrity constraints (NOT NULL, CHECK, DEFAULT)
+- Performance considerations relevant to the CBSA access patterns</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output:<br>
+              · <strong><code>docs/CRECUST-DB2-model.md</code></strong> — complete DDL (<code>CREATE TABLE</code>, <code>CREATE INDEX</code>, constraints) with design decisions documented
+            </div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 3 — Interactive refactoring with <code>/refactor</code></strong></p>
+            <div class="mode-badge mode-badge-zcode">🧰 Z Code mode </div>
+            <div class="step-prompt"><pre>/refactor @CRECUST.cbl @extractionGoal.md</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="info-box">Bob launches a 4-phase interactive workflow: <strong>Analysis → Validation → Generation → Report</strong>. Each VSAM→SQL transformation is presented for your confirmation before being applied.</div>
+            <div class="success-box">Output:<br>
+              · refactored <strong>CRECUST.cbl</strong> — all CICS VSAM commands replaced by <code>EXEC SQL</code> statements<br>
+              · DB2 cursor logic for all sequential browse operations<br>
+              · <code>SQLCODE</code>-based error handling and <code>EXEC CICS SYNCPOINT ROLLBACK</code> on failure paths<br>
+              · original COMMAREA interface and paragraph structure preserved
+            </div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 4 — Generate a migration plan</strong></p>
+            <div class="mode-badge mode-badge-zarch">📐 Z Architect mode</div>
+            <div class="step-prompt"><pre>Create a complete migration plan to move CRECUST.cbl from VSAM to DB2, including:
+- The migration steps
+- The testing strategy (unit, integration, performance)
+- The rollback plan
+- Performance considerations specific to the CBSA environment
+- The final validation checklist</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output:<br>
+              · <strong><code>docs/CRECUST-VSAM-DB2-migration-plan.md</code></strong> — 5-phase plan (Preparation, Development, Integration Testing, Deployment, Stabilization) with rollback trigger conditions and validation checklist
+              <table class="value-table" style="margin-top:10px">
+                <thead><tr><th>Task</th><th>Manual</th><th>With Bob</th></tr></thead>
+                <tbody>
+                  <tr><td>VSAM analysis</td><td>2–3 days</td><td><strong>10 min</strong></td></tr>
+                  <tr><td>DB2 schema design</td><td>3–5 days</td><td><strong>15 min</strong></td></tr>
+                  <tr><td>Code refactoring</td><td>1–2 weeks</td><td><strong>30 min</strong></td></tr>
+                  <tr><td>Migration plan</td><td>3–5 days</td><td><strong>20 min</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

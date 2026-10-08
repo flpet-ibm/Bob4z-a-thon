@@ -1,0 +1,165 @@
+<div class="bubble-card track-4" id="card-bobshell">
+  <div class="card-summary">
+    <div class="card-icon" aria-label="Bob Shell">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--c4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+      </svg>
+    </div>
+    <div class="card-text">
+      <div class="card-label">Lab 3 · ~1–2 hours</div>
+      <div class="card-title">IBM Bob Shell for Automation</div>
+      <div class="card-desc">Use Bob Shell to explore and document a COBOL mainframe project entirely from the terminal — interactively and in non-interactive scripts for CI/CD automation.</div>
+      <div class="card-meta">
+        <span class="card-tag">~1–2 hours</span>
+        <span class="card-tag">💻 Terminal</span>
+        <span class="card-tag">Intermediate</span>
+      </div>
+    </div>
+    <div class="card-chevron" aria-hidden="true">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l5 5 5-5"/></svg>
+    </div>
+  </div>
+
+  <div class="card-detail">
+    <div class="card-detail-inner">
+      <div class="detail-intro">Three exercises that take Bob's AI capabilities to the command line. Install Bob Shell, explore the CBSA project interactively, then automate documentation generation with non-interactive <code>bob run</code> commands — no IDE required.</div>
+
+      <div class="use-cases">
+
+        <!-- Exercise 1 -->
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">1</div>
+            <div class="uc-title">Exercise 1 — Install &amp; Start Bob Shell</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Install Bob Shell, authenticate with your IBMid, and start your first interactive session from the CBSA workspace.</p>
+
+            <p class="uc-desc" style="margin-top:4px"><strong>Step 1 — Install Bob Shell</strong></p>
+            <p class="uc-desc">Option A — Installation script (recommended):</p>
+            <div class="step-prompt"><pre># macOS / Linux
+curl -fsSL https://bob.ibm.com/download/bobshell.sh | bash</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="step-prompt" style="margin-top:8px"><pre># Windows (PowerShell)
+powershell -ep Bypass 'irm -Uri "https://bob.ibm.com/download/bobshell.ps1" | iex'</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <p class="uc-desc" style="margin-top:8px">Option B — from downloaded package:</p>
+            <div class="step-prompt"><pre>npm install --reg=https://registry.npmjs.org/ -g "&lt;file-path&gt;"</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <p class="uc-desc" style="margin-top:8px">Verify the installation:</p>
+            <div class="step-prompt"><pre>which bob
+bob --version</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 2 — Start an interactive session</strong></p>
+            <div class="step-prompt"><pre># Navigate to your CBSA workspace root
+cd ~/CBSA/CBSA-base-source
+
+# Start an interactive session
+bob chat</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="warn-box">⚠️ When Bob Shell runs from a project directory for the first time, a <strong>trust dialog</strong> appears — select <strong>Trust folder</strong> to avoid restricted safe mode.</div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 3 — Explore Bob Shell commands</strong></p>
+            <p class="uc-desc">Before running any task, explore what Bob Shell offers:</p>
+            <div class="step-prompt"><pre>/</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <p class="uc-desc" style="margin-top:6px">Opens the slash command menu. Other useful commands:</p>
+            <div class="step-prompt"><pre>/help</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="step-prompt" style="margin-top:8px"><pre>/mode</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="step-prompt" style="margin-top:8px"><pre>/settings</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="step-prompt" style="margin-top:8px"><pre>/team</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="info-box">Bob Shell supports three modes: <strong>Agent</strong> (generate &amp; modify code), <strong>Ask</strong> (read-only Q&amp;A), <strong>Plan</strong> (reason before implementing). Switch with <code>/mode</code>.</div>
+          </div></div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">2</div>
+            <div class="uc-title">Exercise 2 — Interactive Session: Exploring a Mainframe Project</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Use Bob Shell in <strong>Ask</strong> mode to progressively explore the CBSA project: initialize the workspace, get a high-level overview, drill into a specific program, trace dependencies, then switch to <strong>Plan</strong> mode to design a change.</p>
+            <p class="uc-desc" style="margin-top:4px">Type <code>/mode</code> and select <strong>Ask</strong> before starting.</p>
+
+            <p class="uc-desc" style="margin-top:10px"><strong>Step 0 — Initialize the workspace</strong></p>
+            <div class="step-prompt"><pre>/init</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="info-box">Always run <code>/init</code> first in a new session — it seeds Bob Shell with full workspace context so subsequent prompts have accurate file and structure information.</div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 1 — Get a high-level project overview</strong></p>
+            <div class="step-prompt"><pre>Give me a high-level overview of this project: what languages are used, what are the key directories, and what does this application do?</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output:<br>
+              · structured summary of languages detected (COBOL, BMS, JCL) and directory layout<br>
+              · <code>AGENTS.md</code> — created at workspace root<br>
+              · <code>.bob/rules-agent/AGENTS.md</code>, <code>.bob/rules-ask/AGENTS.md</code>, <code>.bob/rules-plan/AGENTS.md</code> — mode-specific rules files
+            </div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 2 — Understand a specific program</strong></p>
+            <div class="step-prompt"><pre>@cobol_src/BANKDATA.cbl — explain this program: what is its purpose, what data structures does it define, and what are the key paragraphs in the PROCEDURE DIVISION?</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output:<br>
+              · explanation of BANKDATA's role as a batch data loader<br>
+              · key WORKING-STORAGE data structures (account and customer records)<br>
+              · list of PROCEDURE DIVISION paragraphs with a one-line description of each
+            </div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 3 — Trace dependencies across the project</strong></p>
+            <div class="step-prompt"><pre>Which copybooks does @cobol_src/BANKDATA.cbl include, and which other programs in cobol_src/ also use those same copybooks?</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output:<br>
+              · list of copybooks used by BANKDATA (e.g., <code>CUSTOMER.cpy</code>, <code>SORTCODE.cpy</code>)<br>
+              · cross-reference of other programs that include each copybook — showing the full change impact boundary
+            </div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Step 4 — Switch to Plan mode and design a change</strong></p>
+            <p class="uc-desc">Type <code>/mode</code>, select <strong>Plan</strong>, then enter:</p>
+            <div class="step-prompt"><pre>I need to add a new field EMAIL-ADDRESS (PIC X(100)) to the customer record in @CUSTOMER.cpy. What is the safest way to do this without breaking existing programs?</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output:<br>
+              · <strong><code>add-email-address-plan.md</code></strong> — structured plan document saved in the current directory
+            </div>
+            <div class="info-box">Press <code>Ctrl+C</code> twice to exit the interactive session before moving to Exercise 3.</div>
+          </div></div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">3</div>
+            <div class="uc-title">Exercise 3 — Non-Interactive Sessions: Automating Tasks</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">Use Bob Shell's non-interactive mode (<code>bob run "..."</code>) to automate documentation generation from the command line — suitable for CI/CD pipelines.</p>
+            <div class="warn-box">⚠️ Before the first non-interactive use, set up your API key: create one at <a href="https://bob.ibm.com/docs/ide/account/api-keys#api-key-types" target="_blank" rel="noopener">bob.ibm.com</a>, then run: <code>export BOB_API_KEY="your-api-key"</code></div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Option 1 — Single-file non-interactive example</strong></p>
+            <div class="step-prompt"><pre>bob run "Write a one-paragraph technical summary of @cobol_src/BANKDATA.cbl. Output only the summary text, no markdown formatting."</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Option 2 — Batch documentation script</strong></p>
+            <p class="uc-desc">Save as <code>gen-docs.sh</code>:</p>
+            <div class="step-prompt"><pre>#!/bin/bash
+mkdir -p docs
+
+for cbl in cobol_src/*.cbl; do
+  program=$(basename "$cbl" .cbl)
+  echo "Documenting $program..."
+  bob run "Write a one-paragraph technical summary of @${cbl}. Output only the summary text." \
+    > "docs/${program}-summary.txt"
+done
+
+echo "Documentation complete. Output in docs/"</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="step-prompt" style="margin-top:8px"><pre>chmod +x gen-docs.sh
+./gen-docs.sh</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output:<br>
+              · <code>docs/</code> folder populated with <code>.txt</code> summary files — one per COBOL program — each containing a technical description of the program's purpose, inputs, and outputs
+            </div>
+
+            <p class="uc-desc" style="margin-top:12px"><strong>Option 3 — Pipe a prompt from a file</strong></p>
+            <div class="step-prompt"><pre>echo "list current file structure" >> prompt.txt
+cat prompt.txt | bob</pre><button class="copy-btn" aria-label="Copy">Copy</button></div>
+            <div class="success-box">Output:<br>
+              · the current file structure of the workspace displayed in the terminal
+            </div>
+            <div class="info-box">The <code>bob run</code> pattern can be embedded in CI/CD pipelines (GitHub Actions, Jenkins, etc.) for automated code documentation and quality checks on every commit.</div>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
