@@ -534,6 +534,20 @@ pre, code, kbd, samp {
   font-size: 0.82rem; color: var(--muted); line-height: 1.6;
 }
 .success-box strong { color: #5ec98a; }
+.learn-box {
+  margin-top: 14px;
+  background: rgba(124,58,237,0.06);
+  border: 1px solid rgba(124,58,237,0.22);
+  border-radius: 10px; padding: 14px 16px;
+  font-size: 0.82rem; color: var(--muted); line-height: 1.6;
+}
+.learn-box .learn-title {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: #a78bfa; margin-bottom: 8px;
+}
+.learn-box ul { padding-left: 18px; margin: 0; }
+.learn-box li { margin-bottom: 4px; }
+.learn-box strong { color: var(--text); }
 
 /* Code / findings */
 .code-block {

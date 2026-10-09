@@ -57,6 +57,15 @@
             <div class="success-box">Output:<br>
               · <code>AGENTS.md</code> — updated with the docs/ convention for all future conversations
             </div>
+            <div class="learn-box">
+              <div class="learn-title">🎓 What You Learn</div>
+              <ul>
+                <li><strong>The importance of initialization:</strong> Metadata (<code>.bobz/local-settings.json</code>) and the data dictionary (<code>bobz/DD.json</code>) are the foundation for all quality analyses.</li>
+                <li><strong>Time savings:</strong> Instead of 2–3 days of manual exploration, Bob analyzes everything in minutes.</li>
+                <li><strong>Standardization:</strong> Naming and output conventions are automatically established.</li>
+                <li><strong>Living documentation:</strong> <code>AGENTS.md</code> serves as a persistent reference across all conversations.</li>
+              </ul>
+            </div>
           </div></div>
         </div>
 
@@ -77,6 +86,14 @@
               · <strong><code>docs/CBSA-inventory.md</code></strong> — full inventory with program dependencies<br>
               · <strong><code>.bob/skills/cbsa-coding-standards/SKILL.md</code></strong> — patterns, checklist, and sample code
             </div>
+            <div class="learn-box">
+              <div class="learn-title">🎓 What You Learn</div>
+              <ul>
+                <li><strong>Automated inventory:</strong> Bob uses <code>execute_sql_query</code> against the metadata database to extract a full structured inventory in minutes vs. days manually.</li>
+                <li><strong>Coding standards as a skill:</strong> Extracting patterns into a reusable <code>SKILL.md</code> means Bob can apply them consistently in every future task.</li>
+                <li><strong>Verification workflow:</strong> After creating the skill, reload the workspace (<strong>File → Close Folder</strong> then reopen) so Bob detects the new skill file before testing it.</li>
+              </ul>
+            </div>
           </div></div>
         </div>
 
@@ -95,6 +112,21 @@
             <div class="success-box">Outputs:<br>
               · <strong><code>docs/cbsa-architecture-Diagram.md</code></strong> — Mermaid diagram with 4 business layers: Presentation, Business logic, Data access, External services<br>
               · <strong><code>docs/cbsa-call-graphs.md</code></strong> — Mermaid call graphs per functional topic
+            </div>
+            <div class="learn-box">
+              <div class="learn-title">🎓 What You Learn &amp; Added Value</div>
+              <ul>
+                <li><strong>Visual communication:</strong> A diagram conveys what a text inventory cannot — layers, flows, and boundaries at a glance.</li>
+                <li><strong>Prompt refinement:</strong> Diagrams can be iteratively improved (e.g. straight links, color-coded access types) without starting over.</li>
+              </ul>
+              <table class="value-table" style="margin-top:10px">
+                <thead><tr><th>Without Bob</th><th>With IBM Bob Premium Package for Z</th></tr></thead>
+                <tbody>
+                  <tr><td>2–3 days of manual creation</td><td>5 minutes of automatic generation</td></tr>
+                  <tr><td>Static diagram (PowerPoint)</td><td>Editable format (Draw.io / Mermaid)</td></tr>
+                  <tr><td>Difficult to update</td><td>Easy regeneration</td></tr>
+                </tbody>
+              </table>
             </div>
           </div></div>
         </div>
@@ -115,6 +147,24 @@
               · VSAM and DB2 dependencies<br>
               · parameterization and data generation techniques<br>
               · error handling patterns
+            </div>
+            <div class="learn-box">
+              <div class="learn-title">🎓 What You Learn &amp; Added Value</div>
+              <ul>
+                <li><strong>Automatic documentation:</strong> Bob analyzes code and generates structured, exhaustive documentation.</li>
+                <li><strong>Batch understanding:</strong> Batch processing logic with VSAM and DB2 dependencies fully documented.</li>
+                <li><strong>Parameterization:</strong> How PARMs make batch programs flexible and testable.</li>
+                <li><strong>Data generation:</strong> Techniques for creating coherent test data sets.</li>
+              </ul>
+              <table class="value-table" style="margin-top:10px">
+                <thead><tr><th>Aspect</th><th>Manual</th><th>With Bob</th></tr></thead>
+                <tbody>
+                  <tr><td>Time</td><td>1–2 days</td><td>5 minutes</td></tr>
+                  <tr><td>Quality</td><td>Variable</td><td>Standardized &amp; exhaustive</td></tr>
+                  <tr><td>Updates</td><td>Difficult</td><td>Instant regeneration</td></tr>
+                  <tr><td>Coverage</td><td>Often partial</td><td>100% of code analyzed</td></tr>
+                </tbody>
+              </table>
             </div>
           </div></div>
         </div>
@@ -153,6 +203,15 @@
             <div class="success-box">Output:<br>
               · <strong><code>docs/BNK1CAC-enhancement.md</code></strong> — identifying bugs (e.g., move to ABND-TIME) and duplicated lines
             </div>
+            <div class="learn-box">
+              <div class="learn-title">🎓 What You Learn</div>
+              <ul>
+                <li><strong>Business rule extraction:</strong> Bob identifies implicit rules not visible in specs — only in code.</li>
+                <li><strong>Inline code generation:</strong> Right-click → <em>IBM Bob → Add to Context</em> lets you target a precise line and generate code in place.</li>
+                <li><strong>Copybook recovery:</strong> Bob can recreate missing copybooks from BMS definitions when compiler errors appear in the PROBLEMS panel.</li>
+                <li><strong>Enhancement analysis:</strong> Bob identifies bugs and improvement opportunities across the full program.</li>
+              </ul>
+            </div>
           </div></div>
         </div>
 
@@ -181,6 +240,14 @@
               · mitigation strategies
             </div>
             <div class="info-box">Bob uses <code>execute_sql_query</code> against the metadata database built in Exercise 1 — turning what would normally be a multi-day manual audit into a few minutes of conversation.</div>
+            <div class="learn-box">
+              <div class="learn-title">🎓 What You Learn</div>
+              <ul>
+                <li><strong>Cross-application tracing:</strong> Bob queries the metadata database with <code>execute_sql_query</code> to find every SORTCODE reference in seconds.</li>
+                <li><strong>Risk-rated impact reports:</strong> Output covers impacted programs, copybooks, DB2 tables, estimated effort, risk rating, and mitigation strategies.</li>
+                <li><strong>AI-assisted planning:</strong> What would normally be a multi-day manual audit becomes a few minutes of conversation.</li>
+              </ul>
+            </div>
           </div></div>
         </div>
 
@@ -207,6 +274,21 @@ The documentation must:
               · real use cases in business language
             </div>
             <div class="info-box">If Bob does not create a file automatically, ask: <code>Write the result into a markdown file under /docs folder</code></div>
+            <div class="learn-box">
+              <div class="learn-title">🎓 What You Learn &amp; Added Value</div>
+              <ul>
+                <li><strong>Audience-aware documentation:</strong> The same codebase can produce both technical docs (Z Code) and non-technical user guides (Ask mode).</li>
+                <li><strong>Complementary angle:</strong> Try asking Bob to explain the program chain from a business user perspective: <code>Can you explain (for a business user) the program chain that starts from BNKMENU, goes through BNK1CCA then INQACCCU?</code></li>
+              </ul>
+              <table class="value-table" style="margin-top:10px">
+                <thead><tr><th>Without Bob</th><th>With IBM Bob Premium Package for Z</th></tr></thead>
+                <tbody>
+                  <tr><td>3–4 days of writing</td><td>10 minutes of generation</td></tr>
+                  <tr><td>Technical documentation</td><td>Adapted business documentation</td></tr>
+                  <tr><td>No visual examples</td><td>Simulated 3270 screens included</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div></div>
         </div>
 
@@ -248,6 +330,78 @@ The documentation must:
             <div class="success-box">Output:<br>
               · syntax verification report with any issues found and suggestions to fix them
             </div>
+            <div class="learn-box">
+              <div class="learn-title">🎓 What You Learn &amp; Added Value</div>
+              <ul>
+                <li><strong>COBOL code generation:</strong> Bob creates production-ready CICS COBOL programs with proper error handling and CBSA conventions.</li>
+                <li><strong>Full-feature delivery:</strong> From planning (Z Architect) through data structures, program creation, and syntax verification (Z Code) — all in one session.</li>
+                <li><strong>Time &amp; cost:</strong> 8–10 weeks of traditional development → ~2 hours. Estimated savings: <strong>$47,000–$72,000 per project</strong>.</li>
+              </ul>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="use-case">
+          <div class="use-case-header">
+            <div class="uc-num">✓</div>
+            <div class="uc-title">Conclusion &amp; Summary</div>
+            <div class="uc-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="uc-body"><div class="uc-body-inner">
+            <p class="uc-desc">🎉 <strong>Congratulations!</strong> In a few hours you have:</p>
+            <ul style="margin-top:6px;padding-left:18px;font-size:0.85rem;color:var(--muted);line-height:2.0">
+              <li>✅ Initialized and analyzed a complex mainframe workspace</li>
+              <li>✅ Generated an exhaustive application inventory</li>
+              <li>✅ Created a professional architecture diagram</li>
+              <li>✅ Documented the BANKDATA batch program</li>
+              <li>✅ Analyzed business rules and added a new validation</li>
+              <li>✅ Evaluated the impact of a major architectural change</li>
+              <li>✅ Documented a complete user journey</li>
+              <li>✅ Implemented a new feature end-to-end</li>
+            </ul>
+
+            <p class="uc-desc" style="margin-top:14px"><strong>📊 Time Gains Summary</strong></p>
+            <table class="value-table" style="margin-top:6px">
+              <thead><tr><th>Task</th><th>Without Bob</th><th>With Bob</th><th>Gain</th></tr></thead>
+              <tbody>
+                <tr><td>Initialization</td><td>2–3 days</td><td>3 min</td><td>99.8%</td></tr>
+                <tr><td>Inventory</td><td>1–2 weeks</td><td>10 min</td><td>99.5%</td></tr>
+                <tr><td>Architecture diagram</td><td>2–3 days</td><td>5 min</td><td>99.7%</td></tr>
+                <tr><td>Program documentation</td><td>1–2 days</td><td>5 min</td><td>99.7%</td></tr>
+                <tr><td>Business rules analysis</td><td>1 week</td><td>10 min</td><td>99.6%</td></tr>
+                <tr><td>Impact analysis</td><td>2 weeks</td><td>15 min</td><td>99.7%</td></tr>
+                <tr><td>User journey</td><td>3–4 days</td><td>10 min</td><td>99.6%</td></tr>
+                <tr><td>Feature implementation</td><td>8–10 weeks</td><td>~2 hrs</td><td>99.5%</td></tr>
+                <tr><td><strong>TOTAL</strong></td><td><strong>11–17 weeks</strong></td><td><strong>~76 min</strong></td><td><strong>99.6%</strong></td></tr>
+              </tbody>
+            </table>
+
+            <p class="uc-desc" style="margin-top:14px"><strong>🔧 Mode Usage Summary</strong></p>
+            <table class="value-table" style="margin-top:6px">
+              <thead><tr><th>Exercise</th><th>Mode</th><th>Why</th></tr></thead>
+              <tbody>
+                <tr><td>1. Initialization</td><td>🧰 Z Code</td><td>Mainframe analysis &amp; metadata creation</td></tr>
+                <tr><td>2. Inventory</td><td>🧰 Z Code</td><td>Exhaustive COBOL component scan</td></tr>
+                <tr><td>3. Architecture</td><td>📐 Z Architect</td><td>Diagram creation &amp; flow analysis</td></tr>
+                <tr><td>4. BANKDATA docs</td><td>🧰 Z Code</td><td>Detailed batch program documentation</td></tr>
+                <tr><td>5. Business rules</td><td>🧰 Z Code</td><td>Pattern &amp; rule extraction from code</td></tr>
+                <tr><td>6. Impact analysis</td><td>📐 Z Architect</td><td>Change impact &amp; risk planning</td></tr>
+                <tr><td>7. User journey</td><td>❓ Ask</td><td>Non-technical documentation for tellers</td></tr>
+                <tr><td>8. Feature impl.</td><td>📐 Z Arch + 🧰 Z Code</td><td>Planning then generation</td></tr>
+              </tbody>
+            </table>
+
+            <p class="uc-desc" style="margin-top:14px"><strong>🚀 Next Steps</strong></p>
+            <ul style="margin-top:4px;padding-left:18px;font-size:0.82rem;color:var(--muted);line-height:1.9">
+              <li>Apply these techniques to your own mainframe applications</li>
+              <li>Train your team using this lab as a template</li>
+              <li>Explore <strong>Bob Shell</strong> to automate documentation in CI/CD pipelines</li>
+              <li>Build a skill library for your project's coding standards and patterns</li>
+              <li>Use <strong>Lab 2</strong> to extend the analysis to the Java/React frontend layer</li>
+            </ul>
+
+            <div class="info-box" style="margin-top:14px"><strong>💼 Enterprise value:</strong> Cost avoided per project — 8–12 weeks × 40 h × $150/h = <strong>$48,000–$72,000</strong>. Bob time: ~76 minutes ≈ $170. <strong>Net savings: ~$47,000–$72,000 per project.</strong></div>
           </div></div>
         </div>
 
