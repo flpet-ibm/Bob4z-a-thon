@@ -7,7 +7,7 @@
     </div>
     <div class="card-text">
       <div class="card-label">Setup and Background</div>
-      <div class="card-title">Environment Setup and understand the CBSA  application  </div>
+      <div class="card-title">Environment Setup and CBSA application background information</div>
       <div class="card-desc">Install Bob, get the application source code, learn about the CBSA application and lab objectives</div>
       <div class="card-meta">
         <span class="card-tag">~20 min</span>
@@ -46,9 +46,30 @@
               <div class="mode-step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Download &amp; install IBM Bob IDE</div>
-                  <div class="step-desc">⚠️ Skip this step, if you are using an IBM provided environment or laptop. 
-                    <br>Otherwise, get the desktop app from <strong>bob.ibm.com/download</strong> — available for macOS, Windows, and Linux.</div>
+                  <div class="step-title">Get IBM Bob IDE</div>
+                  <div class="step-desc">For the Bob-a-thon there are 3 options to get access to Bob:
+                    <ul style="margin-top:6px;padding-left:18px;font-size:0.78rem;color:var(--muted);line-height:1.8">
+                      <li><strong style="color:var(--text)">Own laptop</strong> If you are using your own laptop, you need to install the Bob IDE. Get the installer from <a href="https://bob.ibm.com/download" target="_blank" rel="noopener" style="color:var(--text)">bob.ibm.com/download</a> — available for macOS, Windows, and Linux.</li>
+                      <li><strong style="color:var(--text)">Through a browser</strong> Point your browser to <a href="https://techzone.ibm.com/my/requests" target="_blank" rel="noopener" style="color:var(--text)">techzone.ibm.com/my/requests</a>. Expand the image and click on the console link. </li>
+                      <li><strong style="color:var(--text)">IBM laptop</strong> If you are using an IBM provided laptop, then Bob IDE is already installed, and you are good to go.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="mode-step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <div class="step-title">Starting Bob for the first time</div>
+                  <div class="step-desc">When you start Bob for the first time, you will be asked a number of questions to finalize the setup. For the purpose of the workshop you should respond like this:
+                    <ul style="margin-top:6px;padding-left:18px;font-size:0.78rem;color:var(--muted);line-height:1.8">
+                      <li>If you are asked about a password for the keyring, just press <strong style="color:var(--text)">Cancel</strong> a couple of times without a password. <strong style="color:var(--text)">If you press Continue, Bob might lock up due to an environment issue, and you will have to kill Bob and start this step again.</strong></li>
+                      <li>If you are asked about storing passwords unencrypted, just press <strong style="color:var(--text)">Continue</strong>.</li>
+                      <li>When you are asked if you want to import settings and extensions from a previous version, just press <strong style="color:var(--text)">Skip For Now</strong>.</li>
+                      <li>When Bob asks for permission to open an external website, choose <strong style="color:var(--text)">Open</strong>.</li>
+                      <li>IF you are asked if you trust IBM's and Mermaid's extensions. You do!</li>
+                      <li>If you at some point get a message box requesting you to create a Mermaid account, just cancel it, and it will continue to function as required without an account.</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

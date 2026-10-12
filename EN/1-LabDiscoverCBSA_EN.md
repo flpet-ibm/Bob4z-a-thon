@@ -148,7 +148,7 @@ Retrieve the CBSA application source code from GitHub and prepare the workspace 
 When you start Bob for the first time, you will be asked a number of questions to finalize the setup.  
 
 For the purpose of the workshop you should responds like this:
-- If you are asked about a password for the keyring, just press Continue without a password
+- If you are asked about a password for the keyring, just press Cancel a couple of time without a password. **If you press Continue, Bob might lockup due to a environment issue, and you will have to kill Bob, and start again**
 - IF you are asked about storing passwords unencrypted, just press Continue
 - When you are asked if you want to import settings and extensions from a previous version, just press "Skip For Now". 
 - Use the blue "Login to Bob" button on the right side Bob chat window, when there are no more popups appearing.
